@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "factures",
+  "info": {
+    "singularName": "facture",
+    "pluralName": "factures",
+    "displayName": "facture"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "preom": {
+      "type": "string"
+    }
+  }
+}
