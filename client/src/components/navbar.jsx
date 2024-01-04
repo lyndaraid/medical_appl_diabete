@@ -157,13 +157,19 @@ const Navbar = () => {
       </ListItemIcon>
       <ListItemText primary="Contact" />
     </ListItem>
-    <ListItemText primary="Facture" />
-              <ListItem
+
+     <ListItem
               component={NavLink}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
               to="Facture"
               button
-            ></ListItem>
+            >
+              <ListItemIcon sx={{ fontSize: iconSize, color: '#fff' }}>
+                <InfoIcon />
+              </ListItemIcon>
+              <ListItemText primary="Facture" />
+            </ListItem>
+    
     <ListItem
       component={NavLink}
       to="Logout"
