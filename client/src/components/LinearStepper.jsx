@@ -9,6 +9,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
 
 import {
   useForm,
@@ -30,15 +31,15 @@ const BasicForm = () => {
   const { control } = useFormContext();
   return (
     <>
-      <Controller
+    <Controller
         control={control}
-        name="firstName"
+        name="gender"
         render={({ field }) => (
           <TextField
-            id="first-name"
-            label="First Name"
+            id="gender"
+            label="Gender"
             variant="outlined"
-            placeholder="Enter Your First Name"
+            placeholder="Enter Your Gender (0 for Male, 1 for Female)"
             fullWidth
             margin="normal"
             {...field}
@@ -48,13 +49,13 @@ const BasicForm = () => {
 
       <Controller
         control={control}
-        name="lastName"
+        name="age"
         render={({ field }) => (
           <TextField
-            id="last-name"
-            label="Last Name"
+            id="age"
+            label="Age"
             variant="outlined"
-            placeholder="Enter Your Last Name"
+            placeholder="Enter Your Age"
             fullWidth
             margin="normal"
             {...field}
@@ -62,15 +63,31 @@ const BasicForm = () => {
         )}
       />
 
-      <Controller
+<Controller
         control={control}
-        name="nickName"
+        name="hypertension"
         render={({ field }) => (
           <TextField
-            id="nick-name"
-            label="Nick Name"
+            id="hypertension"
+            label="Hypertension"
             variant="outlined"
-            placeholder="Enter Your Nick Name"
+            placeholder="Enter Your Hypertension Status (0 or 1)"
+            fullWidth
+            margin="normal"
+            {...field}
+          />
+        )}
+      />
+
+<Controller
+        control={control}
+        name="heart_disease"
+        render={({ field }) => (
+          <TextField
+            id="heart-disease"
+            label="Heart Disease"
+            variant="outlined"
+            placeholder="Enter Your Heart Disease Status (0 or 1)"
             fullWidth
             margin="normal"
             {...field}
@@ -87,13 +104,29 @@ const ContactForm = () => {
     <>
       <Controller
         control={control}
-        name="emailAddress"
+        name="bmi"
         render={({ field }) => (
           <TextField
-            id="email"
-            label="E-mail"
+            id="bmi"
+            label="BMI"
             variant="outlined"
-            placeholder="Enter Your E-mail Address"
+            placeholder="Enter Your BMI"
+            fullWidth
+            margin="normal"
+            {...field}
+          />
+        )}
+      />
+
+    <Controller
+        control={control}
+        name="HbA1c_level"
+        render={({ field }) => (
+          <TextField
+            id="hba1c-level"
+            label="HbA1c Level"
+            variant="outlined"
+            placeholder="Enter Your HbA1c Level"
             fullWidth
             margin="normal"
             {...field}
@@ -103,28 +136,13 @@ const ContactForm = () => {
 
       <Controller
         control={control}
-        name="phoneNumber"
+        name="blood_glucose_level"
         render={({ field }) => (
           <TextField
-            id="phone-number"
-            label="Phone Number"
+            id="blood-glucose-level"
+            label="Blood Glucose Level"
             variant="outlined"
-            placeholder="Enter Your Phone Number"
-            fullWidth
-            margin="normal"
-            {...field}
-          />
-        )}
-      />
-      <Controller
-        control={control}
-        name="alternatePhone"
-        render={({ field }) => (
-          <TextField
-            id="alternate-phone"
-            label="Alternate Phone"
-            variant="outlined"
-            placeholder="Enter Your Alternate Phone"
+            placeholder="Enter Your Blood Glucose Level"
             fullWidth
             margin="normal"
             {...field}
@@ -141,13 +159,29 @@ const PersonalForm = () => {
     <>
       <Controller
         control={control}
-        name="address1"
+        name="smoking_history_No_Info"
         render={({ field }) => (
           <TextField
-            id="address1"
-            label="Address 1"
+            id="smoking-history-no-info"
+            label="Smoking History (No Info)"
             variant="outlined"
-            placeholder="Enter Your Address 1"
+            placeholder="Enter Your Smoking History (No Info)"
+            fullWidth
+            margin="normal"
+            {...field}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="smoking_history_current"
+        render={({ field }) => (
+          <TextField
+            id="smoking-history-current"
+            label="Smoking History (Current)"
+            variant="outlined"
+            placeholder="Enter Your Smoking History (Current)"
             fullWidth
             margin="normal"
             {...field}
@@ -156,34 +190,20 @@ const PersonalForm = () => {
       />
       <Controller
         control={control}
-        name="address2"
+        name="smoking_history_ever"
         render={({ field }) => (
           <TextField
-            id="address2"
-            label="Address 2"
+            id="smoking-history-ever"
+            label="Smoking History (Ever)"
             variant="outlined"
-            placeholder="Enter Your Address 2"
+            placeholder="Enter Your Smoking History (Ever)"
             fullWidth
             margin="normal"
             {...field}
           />
         )}
       />
-      <Controller
-        control={control}
-        name="country"
-        render={({ field }) => (
-          <TextField
-            id="country"
-            label="Country"
-            variant="outlined"
-            placeholder="Enter Your Country Name"
-            fullWidth
-            margin="normal"
-            {...field}
-          />
-        )}
-      />
+
     </>
   );
 };
@@ -192,51 +212,54 @@ const PaymentForm = () => {
   const { control } = useFormContext();
   return (
     <>
-      <Controller
+     <Controller
         control={control}
-        name="cardNumber"
+        name="smoking_history_former"
         render={({ field }) => (
           <TextField
-            id="cardNumber"
-            label="Card Number"
+            id="smoking-history-former"
+            label="Smoking History (Former)"
             variant="outlined"
-            placeholder="Enter Your Card Number"
+            placeholder="Enter Your Smoking History (Former)"
             fullWidth
             margin="normal"
             {...field}
           />
         )}
       />
-      <Controller
+       <Controller
         control={control}
-        name="cardMonth"
+        name="smoking_history_never"
         render={({ field }) => (
           <TextField
-            id="cardMonth"
-            label="Card Month"
+            id="smoking-history-never"
+            label="Smoking History (Never)"
             variant="outlined"
-            placeholder="Enter Your Card Month"
+            placeholder="Enter Your Smoking History (Never)"
             fullWidth
             margin="normal"
             {...field}
           />
         )}
       />
+
       <Controller
         control={control}
-        name="cardYear"
+        name="smoking_history_not_current"
         render={({ field }) => (
           <TextField
-            id="cardYear"
-            label="Card Year"
+            id="smoking-history-not-current"
+            label="Smoking History (Not Current)"
             variant="outlined"
-            placeholder="Enter Your Card Year"
+            placeholder="Enter Your Smoking History (Not Current)"
             fullWidth
             margin="normal"
             {...field}
           />
         )}
       />
+
+
     </>
   );
 };
@@ -260,23 +283,28 @@ function getStepContent(step) {
 const LinaerStepper = () => {
   const methods = useForm({
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      nickName: "",
-      emailAddress: "",
-      phoneNumber: "",
-      alternatePhone: "",
-      address1: "",
-      address2: "",
-      country: "",
-      cardNumber: "",
-      cardMonth: "",
-      cardYear: "",
+    gender: 0,
+    age: 0,
+    hypertension: 0,
+    heart_disease: 0,
+    bmi: 0,
+    HbA1c_level: 0,
+    blood_glucose_level: 0,
+    smoking_history_No_Info: 0,
+    smoking_history_current: 0,
+    smoking_history_ever: 0,
+    smoking_history_former: 0,
+    smoking_history_never: 0,
+    smoking_history_not_current: 0,
     },
   });
   const [activeStep, setActiveStep] = useState(0);
-  const [skippedSteps, setSkippedSteps] = useState([]);
-  const steps = getSteps();
+const [skippedSteps, setSkippedSteps] = useState([]);
+const [predictionResult, setPredictionResult] = useState(null);
+const [showVisualization, setShowVisualization] = useState(true); // Add this line
+const [showVisualizationDialog, setShowVisualizationDialog] = useState(false); // Add this line
+const steps = getSteps();
+ const [data, setData] = useState({});
 
   const isStepOptional = (step) => {
     return step === 1 || step === 2;
@@ -286,15 +314,79 @@ const LinaerStepper = () => {
     return skippedSteps.includes(step);
   };
 
-  const handleNext = (data) => {
-    console.log(data);
+  const VisualizationComponent = ({ onClose }) => {
+  // Implement your logic to display the visualization components here
+
+  return (
+    <Dialog open={true} onClose={onClose}>
+      <DialogTitle>Visualization</DialogTitle>
+      <DialogContent>
+        {/* Add your visualization components here */}
+        <Typography>Visualization Content Goes Here</Typography>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onClose} color="primary">
+          Close
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
+};
+
+  const fetchData = async (data) => {
+    try {
+      const response = await fetch("https://dc01-34-66-122-1.ngrok-free.app/diabetes_prediction", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          "gender": data.gender || 0,
+          "age": data.age || 0,
+          "hypertension": data.hypertension || 0,
+          "heart_disease": data.heart_disease || 0,
+          "bmi": data.bmi || 0,
+          "HbA1c_level": data.HbA1c_level || 0,
+          "blood_glucose_level": data.blood_glucose_level || 0,
+          "smoking_history_No_Info": data.smoking_history_No_Info || 0,
+          "smoking_history_current": data.smoking_history_current || 0,
+          "smoking_history_ever": data.smoking_history_ever || 0,
+          "smoking_history_former": data.smoking_history_former || 0,
+          "smoking_history_never": data.smoking_history_never || 0,
+          "smoking_history_not_current": data.smoking_history_not_current || 0
+        }),
+      });
+  
+      if (!response.ok) {
+        console.error(`Prediction request failed with status ${response.status}: ${await response.text()}`);
+        throw new Error('Prediction request failed');
+      }
+  
+      const predictionResult = await response.json();
+      console.log(predictionResult);
+      setPredictionResult(predictionResult);; // Set the result to state
+      // Handle the result in your React application
+      // For example, you can update the UI based on the prediction result
+      // result will be a string like "the person is diabetic" or "the person is not diabetic"
+    } catch (error) {
+      console.error('Error making prediction request:', error.message);
+    }
+  };
+
+  const handleNext = async (data) => {
     if (activeStep === steps.length - 1) {
       fetch("https://jsonplaceholder.typicode.com/comments")
-        .then((data) => data.json())
+       .then((data) => data.json())
         .then((res) => {
-          console.log(res);
-          setActiveStep(activeStep + 1);
+        console.log(res);
+         setActiveStep(activeStep + 1);
         });
+       setData(data); // Set formData to the data variable
+      await fetchData();
+
+      await fetchData(data);
+
+
     } else {
       setActiveStep(activeStep + 1);
       setSkippedSteps(
@@ -302,6 +394,41 @@ const LinaerStepper = () => {
       );
     }
   };
+
+  const fetchVisualization = async (data) => {
+  try {
+    const queryParams = queryString.stringify(data);
+    const visualizationUrl = `https://dc01-34-66-122-1.ngrok-free.app/diabetes_visualization?${queryParams}`;
+
+    const response = await fetch(visualizationUrl, { method: 'GET', headers: { 'Content-Type': 'application/json' } });
+
+    if (!response.ok) {
+      console.error(`Visualization request failed with status ${response.status}: ${await response.text()}`);
+      throw new Error('Visualization request failed');
+    }
+
+    // Assuming your backend returns the image as a base64-encoded string
+    const visualizationData = await response.json();
+    console.log(visualizationData);
+
+    // Process the visualization data as needed (e.g., display images)
+  } catch (error) {
+    console.error('Error making visualization request:', error.message);
+  }
+};
+
+const handleVisualization = async () => {
+  console.log("Show Visualization");
+  setShowVisualization(false); // Hide the button after clicking
+  setShowVisualizationDialog(true); // Show the visualization dialog
+  await fetchVisualization(data); // Call the function to request visualizations
+};
+
+  const handleCloseVisualization = () => {
+    // Handle closing the visualization dialog
+    setShowVisualizationDialog(false);
+  };
+
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
@@ -349,9 +476,30 @@ const LinaerStepper = () => {
 
         {activeStep === steps.length ? (
           <>
-            <div style={{ textAlign: "center", marginTop: "20px" }}>
-              <CircularProgress style={{ color: "#4caf50" }} />
-            </div>
+            {predictionResult ? (
+              <div>
+                <Typography variant="h6" align="center">
+                  Prediction Result: {predictionResult}
+                </Typography>
+                {showVisualization && (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleVisualization}
+                    fullWidth
+                  >
+                    Show Visualization
+                  </Button>
+                )}
+                {showVisualizationDialog && (
+                  <VisualizationComponent onClose={handleCloseVisualization} />
+                )}
+              </div>
+            ) : (
+              <div style={{ textAlign: "center", marginTop: "20px" }}>
+                <CircularProgress style={{ color: "#4caf50" }} />
+              </div>
+            )}
           </>
         ) : (
           <>
