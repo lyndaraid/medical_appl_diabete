@@ -362,122 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiFactureFacture extends Schema.CollectionType {
-  collectionName: 'factures';
-  info: {
-    singularName: 'facture';
-    pluralName: 'factures';
-    displayName: 'facture';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    preom: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::facture.facture',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::facture.facture',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiStudentStudent extends Schema.CollectionType {
-  collectionName: 'students';
-  info: {
-    singularName: 'student';
-    pluralName: 'students';
-    displayName: 'student';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    firstName: Attribute.String;
-    lastName: Attribute.String;
-    profile: Attribute.Media;
-    previousMarksheet: Attribute.Media;
-    phone: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        minLength: 10;
-        maxLength: 10;
-      }>;
-    standard: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 12;
-      }>;
-    section: Attribute.Enumeration<['A', 'B', 'C', 'D']>;
-    state: Attribute.String;
-    city: Attribute.String;
-    town: Attribute.String;
-    country: Attribute.String;
-    pincode: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 6;
-        max: 6;
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::student.student',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::student.student',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiUtilisateurUtilisateur extends Schema.CollectionType {
-  collectionName: 'utilisateurs';
-  info: {
-    singularName: 'utilisateur';
-    pluralName: 'utilisateurs';
-    displayName: 'utilisateur';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    username: Attribute.String & Attribute.Required;
-    email: Attribute.Email & Attribute.Required;
-    password: Attribute.Password & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::utilisateur.utilisateur',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::utilisateur.utilisateur',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -793,6 +677,122 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiFactureFacture extends Schema.CollectionType {
+  collectionName: 'factures';
+  info: {
+    singularName: 'facture';
+    pluralName: 'factures';
+    displayName: 'facture';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    preom: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::facture.facture',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::facture.facture',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStudentStudent extends Schema.CollectionType {
+  collectionName: 'students';
+  info: {
+    singularName: 'student';
+    pluralName: 'students';
+    displayName: 'student';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    firstName: Attribute.String;
+    lastName: Attribute.String;
+    profile: Attribute.Media;
+    previousMarksheet: Attribute.Media;
+    phone: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        minLength: 10;
+        maxLength: 10;
+      }>;
+    standard: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 12;
+      }>;
+    section: Attribute.Enumeration<['A', 'B', 'C', 'D']>;
+    state: Attribute.String;
+    city: Attribute.String;
+    town: Attribute.String;
+    country: Attribute.String;
+    pincode: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 6;
+        max: 6;
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::student.student',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::student.student',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiUtilisateurUtilisateur extends Schema.CollectionType {
+  collectionName: 'utilisateurs';
+  info: {
+    singularName: 'utilisateur';
+    pluralName: 'utilisateurs';
+    displayName: 'utilisateur';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    username: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    password: Attribute.Password & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::utilisateur.utilisateur',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::utilisateur.utilisateur',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -803,15 +803,15 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::facture.facture': ApiFactureFacture;
-      'api::student.student': ApiStudentStudent;
-      'api::utilisateur.utilisateur': ApiUtilisateurUtilisateur;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::facture.facture': ApiFactureFacture;
+      'api::student.student': ApiStudentStudent;
+      'api::utilisateur.utilisateur': ApiUtilisateurUtilisateur;
     }
   }
 }
