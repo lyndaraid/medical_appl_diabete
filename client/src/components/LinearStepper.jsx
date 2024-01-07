@@ -21,9 +21,9 @@ import {
 function getSteps() {
   return [
     "Basic information",
-    "Contact Information",
-    "Personal Information",
-    "Payment",
+    "Wellness Metrics Form",
+    "Detailed Smoking Survey",
+    "Former Smoking Experience",
   ];
 }
 
