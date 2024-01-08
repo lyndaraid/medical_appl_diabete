@@ -14,12 +14,15 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 /* import routes */
+import styled from '@emotion/styled';
 import Layout from './routes/layout';
 import Home from './routes/home';
 import AideDiagnostic from './routes/aideDiagnostic';
 import About from './routes/about';
 import Contact from './routes/contact';
 import Facture from './routes/Facture';
+
+import GestionMed from './routes/GestionMed';
 
 // import Accuiel from "./components/Home";
 import Login from "./components/Login";
@@ -99,6 +102,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="Facture" element={<Facture />} />
+      <Route path="GestionMed" element={<GestionMed />} />
       <Route path="students" element={<Students />} loader={StudentLoader} />
 
       {/* <Route path="/Accuiel" element={<Protector Component={Home} />} /> */}
