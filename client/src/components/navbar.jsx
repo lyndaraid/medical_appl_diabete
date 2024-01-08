@@ -169,6 +169,17 @@ const Navbar = () => {
               </ListItemIcon>
               <ListItemText primary="Facture" />
             </ListItem>
+    <ListItem
+              component={NavLink}
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              to="GestionMed"
+              button
+            >
+              <ListItemIcon sx={{ fontSize: iconSize, color: '#fff' }}>
+                <InfoIcon />
+              </ListItemIcon>
+              <ListItemText primary="GestionMed" />
+            </ListItem>
     
     <ListItem
       component={NavLink}
