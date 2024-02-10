@@ -7,6 +7,8 @@ import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+// icon pour rendez-vous
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 import { useState } from 'react';
 
@@ -158,6 +160,18 @@ const Navbar = () => {
       <ListItemText primary="Contact" />
     </ListItem>
 
+    <ListItem
+      component={NavLink}
+      to="Rendez-vous"
+      onClick={handleDrawerClose}
+      button
+    >
+      <ListItemIcon sx={{ fontSize: iconSize, color: '#ccc' }}>
+        <CalendarMonthIcon />
+      </ListItemIcon>
+      <ListItemText primary="Rendez-vous" />
+    </ListItem>
+
      <ListItem
               component={NavLink}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -169,6 +183,8 @@ const Navbar = () => {
               </ListItemIcon>
               <ListItemText primary="Facture" />
             </ListItem>
+
+
     <ListItem
               component={NavLink}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
